@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Experiencia Palau Salort</title>
+
+    <!-- A-Frame y AR.js -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+    <!-- Enlaces externos -->
+    <link rel="stylesheet" href="style.css"/>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Pantalla de carga -->
+    <div class="arjs-loader">
+      <div>
+        Bienvenido a la Experiencia de Palau Salort<br />
+        Cargando cámara...<br />
+        Apunta a un cuadro
+      </div>
+    </div>
+    <!-- Escena AR -->
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false"
+    >
+      <a-assets>
+        <audio id="sonido" src="https://palaciosalort.com/ra/sonidos/sonido-deteccion.mp3" preload="auto"></audio>
+      </a-assets>
+
+      <a-entity camera></a-entity>
+
+      <!-- Marcadores -->
+      <a-nft type="nft" url="https://palaciosalort.com/ra/cuadro_2" id="cuadro2"></a-nft>
+      <a-nft type="nft" url="https://palaciosalort.com/ra/cuadro_3" id="cuadro3"></a-nft>
+    </a-scene>
+  </body>
+</html>
